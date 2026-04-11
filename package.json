@@ -1,0 +1,49 @@
+{
+  "name": "azitis-automation",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "client:desktop": "npx playwright test tests/client --project=\"Client desktop\"",
+    "client:desktop:auth": "npx playwright test tests/client --project=\"Client desktop - authenticated\" --headed",
+    "client:mobile": "npx playwright test tests/client --project=\"Client mobile\"",
+    "admin:desktop": "npx playwright test tests/admin --project=\"Admin desktop\" --headed",
+    "allure:report": "npx allure generate allure-results --clean && npx allure open",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "tsc --noEmit --watch",
+    "lint": "eslint . --ext .ts,.js",
+    "lint:fix": "eslint . --ext .ts,.js --fix",
+    "lint:report": "eslint . --ext .ts,.js --format html --output-file eslint-report.html",
+    "clean": "rm -rf dist test-results playwright-report allure-results",
+    "validate": "npm run type-check && npm run lint",
+    "viewpw": "playwright install --list",
+    "update.packages": "npm i npm-check-updates && ncu -u && npm install && npm install @playwright/test@latest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/genuineq/azitis-automation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/genuineq/azitis-automation/issues"
+  },
+  "homepage": "https://github.com/genuineq/azitis-automation#readme",
+  "devDependencies": {
+    "@faker-js/faker": "^10.1.0",
+    "@playwright/test": "^1.58.0",
+    "@types/node": "^25.0.3",
+    "@typescript-eslint/eslint-plugin": "^8.50.0",
+    "@typescript-eslint/parser": "^8.50.0",
+    "allure-commandline": "^2.36.0",
+    "allure-playwright": "^3.4.3",
+    "dotenv": "^17.2.3",
+    "eslint": "^9.39.2",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "npm-check-updates": "^19.2.0"
+  }
+}

@@ -1,0 +1,28 @@
+
+# Playwright
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/
+/package-lock.json
+/allure-report/
+/tests/client/seed.spec.ts
+/test/seed.spec.ts
+/utils/generatedData
+AUTOMATION_GUIDE.md
+/utils/generatedData/
+
+# Allure Results - ignore everything except config files
+/allure-results/*
+!/allure-results/categories.json
+!/allure-results/executor.json
+/allure-report/*
+
+# IDE
+/.vscode/
+/.github/
+
+# Generated Playwright snapshot folders and aria snapshot files
+*-snapshots/
+*.aria.yml
